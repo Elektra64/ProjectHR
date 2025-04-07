@@ -38,7 +38,7 @@
                 <div class="sidebar-overlay"></div>
                 <div class="d-flex">
                     <button class="toggle-btn" type="button">
-                        <i class="lni lni-grid-alt"></i>
+                        <i class="lni lni-grid"></i>
                     </button>
                     <div class="sidebar-logo">
                         <a href="#">HR_Manager</a>
@@ -47,36 +47,45 @@
                 <ul class="sidebar-nav">
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link">
-                            <i class="lni lni-user"></i>
-                            <span>Profile</span>
+                            <i class="lni lni-grid-alt"></i>
+                            <span>Dashboard</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link">
-                            <i class="lni lni-agenda"></i>
-                            <span>Task</span>
+                            <i class="lni lni-bookmark"></i>
+                            <span>Attendance/Leave</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
+                            <i class="lni lni-money-protection"></i>
+                            <span>Payroll/Benefits</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
-                            data-bs-target="#auth" aria-expanded="false" aria-controls="auth">
-                            <i class="lni lni-protection"></i>
-                            <span>Auth</span>
+                            data-bs-target="#emanage" aria-expanded="false" aria-controls="auth">
+                            <i class="lni lni-users"></i>
+                            <span>Manage Employee</span>
                         </a>
-                        <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <ul id="emanage" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Login</a>
+                                <a href="#" class="sidebar-link">Profiles</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Register</a>
+                                <a href="#" class="sidebar-link">Directory</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link">Contracts</a>
                             </li>
                         </ul>
                     </li>
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
                             data-bs-target="#multi" aria-expanded="false" aria-controls="multi">
-                            <i class="lni lni-layout"></i>
-                            <span>Multi Level</span>
+                            <i class="lni lni-bar-chart"></i>  
+                            <span>Performance</span>
                         </a>
                         <ul id="multi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
@@ -86,14 +95,35 @@
                                 </a>
                                 <ul id="multi-two" class="sidebar-dropdown list-unstyled collapse">
                                     <li class="sidebar-item">
-                                        <a href="#" class="sidebar-link">Link 1</a>
+                                        <a href="#" class="sidebar-link">Appraisals</a>
                                     </li>
                                     <li class="sidebar-item">
-                                        <a href="#" class="sidebar-link">Link 2</a>
+                                        <a href="#" class="sidebar-link">KPI Tracking</a>
                                     </li>
                                 </ul>
                             </li>
                         </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                            data-bs-target="#recruit" aria-expanded="false" aria-controls="auth">
+                            <i class="lni lni-briefcase"></i>
+                            <span>Recruitment</span>
+                        </a>
+                        <ul id="recruit" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link">Job Postings</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link">Candidates</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
+                            <i class="lni lni-graduation"></i>
+                            <span>Training/Development</span>
+                        </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link">
@@ -179,7 +209,7 @@
                                                 Profile</a>
                                             </li>
                                             <li><a class="dropdown-item d-flex align-items-center" href="#">
-                                                <i class="lni lni-bookmark me-3 fs-5"></i>
+                                                <i class="lni lni-calendar me-3 fs-5"></i>
                                                 Calendar</a>
                                             </li>
                                             <li><a class="dropdown-item d-flex align-items-center" href="#">

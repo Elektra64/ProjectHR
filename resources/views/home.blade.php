@@ -19,41 +19,95 @@
             </div>
         </div>
 
-        <!-- Dashboard Widgets -->
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title">Total Employees</h5>
-                        <h2 class="card-text">1,234</h2>
+        <main class="dashboard-main container-fluid">
+            <!-- Metrics Cards -->
+            <div class="metrics-grid">
+                <div class="metric-card employee-metric">
+                    <div class="card-content">
+                        <div class="metric-icon">
+                            <i class="lni lni-users"></i>
+                        </div>
+                        <div class="metric-info">
+                            <h3>Total Employees</h3>
+                            <div class="metric-value">1,234</div>
+                            <div class="metric-trend positive">
+                                <i class="lni lni-arrow-up"></i> 12% from last month
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title">Active Departments</h5>
-                        <h2 class="card-text">15</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title">Pending Requests</h5>
-                        <h2 class="card-text">23</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Example Chart -->
-        <div class="card shadow-sm mb-4">
-            <div class="card-body">
-                <h5 class="card-title">Employee Distribution</h5>
-                <div id="chart" style="height: 300px;"></div>
+                <div class="metric-card department-metric">
+                    <div class="card-content">
+                        <div class="metric-icon">
+                            <i class="lni lni-briefcase"></i>
+                        </div>
+                        <div class="metric-info">
+                            <h3>Active Departments</h3>
+                            <div class="metric-value">15</div>
+                            <div class="metric-trend neutral">
+                                <i class="lni lni-minus"></i> No change
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metric-card request-metric">
+                    <div class="card-content">
+                        <div class="metric-icon">
+                            <i class="lni lni-alarm"></i>
+                        </div>
+                        <div class="metric-info">
+                            <h3>Pending Requests</h3>
+                            <div class="metric-value">23</div>
+                            <div class="metric-trend negative">
+                                <i class="lni lni-arrow-down"></i> 5% overdue
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+
+            <!-- Charts Section -->
+            <div class="charts-container">
+                <div class="main-chart">
+                    <div class="chart-header">
+                        <h3>Employee Distribution</h3>
+                        <div class="chart-controls">
+                            <select class="form-select period-select">
+                                <option>Last 7 Days</option>
+                                <option>Last Month</option>
+                                <option>Last Year</option>
+                            </select>
+                        </div>
+                    </div>
+                    <canvas id="employeeChart"></canvas>
+                </div>
+
+                <div class="side-charts">
+                    <div class="small-chart attendance-chart">
+                        <h4>Attendance Rate</h4>
+                        <canvas id="attendanceChart"></canvas>
+                    </div>
+                    <div class="small-chart gender-chart">
+                        <h4>Gender Ratio</h4>
+                        <canvas id="genderChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Action Buttons -->
+            <div class="quick-actions">
+                <button class="action-btn new-employee">
+                    <i class="lni lni-plus"></i>
+                    Add New Employee
+                </button>
+                <button class="action-btn generate-report">
+                    <i class="lni lni-download"></i>
+                    Generate Report
+                </button>
+            </div>
+        </main>
     </div>
     
 @endsection
