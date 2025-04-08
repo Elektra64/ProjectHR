@@ -7,14 +7,37 @@
             <h1 class="h2">HR Dashboard</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
                 <div class="dropdown-calendar me-2">
-                    <ul class="dropdown-date">
-                        <li>
-                            <!-- <form method="POST" action="{{ route('logout') }}">
-                                @csrf
-                                <button type="submit" class="dropdown-item">Logout</button>
-                            </form> -->
-                        </li>
-                    </ul>
+                    <div class="calendar-search">
+                        <div class="input-group">
+                            <input type="text" 
+                                class="form-control" 
+                                placeholder="Event dates..."
+                                id="calendarSearch">
+                            <button class="btn btn-calendar" id="showCalendar">
+                                <i class="lni lni-calendar"></i>
+                            </button>
+                        </div>
+                        
+                        <!-- Calendar Overlay -->
+                        <div class="calendar-overlay" id="calendarOverlay">
+                            <div class="calendar-container">
+                                <div class="calendar-header">
+                                    <h4>Calendar</h4>
+                                    <div id="realTimeClock" class="calendar-clock"></div>
+                                    <div class="calendar-controls">
+                                        <button class="btn prev-month"><i class="lni lni-chevron-left"></i></button>
+                                        <button class="btn today">Today</button>
+                                        <button class="btn next-month"><i class="lni lni-chevron-right"></i></button>
+                                    </div>
+                                    <span id="realTimeClock"></span>
+                                    <button class="btn-close-calendar">
+                                        <i class="lni lni-close"></i>
+                                    </button>
+                                </div>
+                                <div id="calendar"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

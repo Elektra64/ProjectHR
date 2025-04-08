@@ -13,6 +13,8 @@ Auth::routes();
 
 // });
 
+Route::view('/calendar', 'calendar');
+
 // Temporary route for testing
 Route::get('/dev-login', function () {
     Auth::loginUsingId(1); // Log in as user ID=1

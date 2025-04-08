@@ -14,6 +14,7 @@
 
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
 
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet' />
     <!-- Bootstrap 5 CSS -->
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
       rel="stylesheet"
@@ -46,7 +47,7 @@
                 </div>
                 <ul class="sidebar-nav">
                     <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">
+                        <a href="/home" class="sidebar-link">
                             <i class="lni lni-grid-alt"></i>
                             <span>Dashboard</span>
                         </a>
@@ -208,7 +209,7 @@
                                                 <i class="lni lni-user me-3 fs-5"></i>
                                                 Profile</a>
                                             </li>
-                                            <li><a class="dropdown-item d-flex align-items-center" href="#">
+                                            <li><a class="dropdown-item d-flex align-items-center" href="/calendar">
                                                 <i class="lni lni-calendar me-3 fs-5"></i>
                                                 Calendar</a>
                                             </li>
@@ -246,20 +247,10 @@
         @endauth
     </div>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
-    </script> -->
-
-    <!-- Initialize Bootstrap Tooltips -->
-    <!-- <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-            var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
-                return new bootstrap.Tooltip(tooltipTriggerEl);
-            });
-        }); -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js">
     </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js">
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'>
     </script>
     @livewireScripts
 </body>
