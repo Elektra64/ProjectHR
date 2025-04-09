@@ -43,40 +43,40 @@ document.addEventListener('DOMContentLoaded', function() {
   // });
 
   // Attendance Doughnut Chart
-  const attendanceChart = new Chart(document.getElementById('attendanceChart'), {
+    const attendanceChart = new Chart(document.getElementById('attendanceChart'), {
       type: 'doughnut',
-      data: {
+        data: {
           labels: ['Present', 'Absent'],
           datasets: [{
-              data: [85, 15],
-              backgroundColor: ['#27ae60', '#e74c3c']
+            data: [85, 15],
+            backgroundColor: ['#27ae60', '#e74c3c']
           }]
-      }
-  });
+        }
+    });
 
   // Gender Ratio Pie Chart
-  const genderChart = new Chart(document.getElementById('genderChart'), {
+    const genderChart = new Chart(document.getElementById('genderChart'), {
       type: 'pie',
-      data: {
+        data: {
           labels: ['Male', 'Female'],
           datasets: [{
-              data: [60, 35],
-              backgroundColor: ['#3498db', '#e84393', '#f1c40f']
+            data: [60, 35],
+            backgroundColor: ['#3498db', '#e84393', '#f1c40f']
           }]
-      }
-  });
+        }
+    });
 
   // Dynamic Metric Updates
-  function updateMetrics() {
+    function updateMetrics() {
       fetch('/api/metrics')
-          .then(response => response.json())
-          .then(data => {
-              // Update metric values
-              document.querySelector('.employee-metric .metric-value').textContent = data.totalEmployees;
-              document.querySelector('.department-metric .metric-value').textContent = data.activeDepartments;
-              document.querySelector('.request-metric .metric-value').textContent = data.pendingRequests;
-          });
-  }
+        .then(response => response.json())
+        .then(data => {
+            // Update metric values
+            document.querySelector('.employee-metric .metric-value').textContent = data.totalEmployees;
+            document.querySelector('.department-metric .metric-value').textContent = data.activeDepartments;
+            document.querySelector('.request-metric .metric-value').textContent = data.pendingRequests;
+        });
+    }
 
   // Update metrics every 30 seconds
   // setInterval(updateMetrics, 30000);
@@ -85,20 +85,20 @@ document.addEventListener('DOMContentLoaded', function() {
 // Calendar Toggle
 document.getElementById('showCalendar').addEventListener('click', function() {
     document.getElementById('calendarOverlay').style.display = 'flex';
-  });
-  
-  document.querySelector('.btn-close-calendar').addEventListener('click', function() {
+});
+
+document.querySelector('.btn-close-calendar').addEventListener('click', function() {
     document.getElementById('calendarOverlay').style.display = 'none';
-  });
-  
-  // Close calendar when clicking outside
-  document.getElementById('calendarOverlay').addEventListener('click', function(e) {
+});
+
+// Close calendar when clicking outside
+document.getElementById('calendarOverlay').addEventListener('click', function(e) {
     if(e.target === this) {
         this.style.display = 'none';
     }
-  });
+});
   
-  document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     // Initialize Calendar
     const calendarEl = document.getElementById('calendar');
     if (calendarEl) {
@@ -120,7 +120,7 @@ document.getElementById('showCalendar').addEventListener('click', function() {
         datesSet: function(dateInfo) {
               updateRealTimeClock();
           }
-      });
+        });
   
        // Calendar navigation controls
        document.querySelector('.prev-month').addEventListener('click', () => calendar.prev());
@@ -130,6 +130,39 @@ document.getElementById('showCalendar').addEventListener('click', function() {
       calendar.render();
     }
   
+    // For Dedicated Calendar Page
+    const mainCalendarEl = document.getElementById('main-calendar');
+    // Initialize main calendar
+    if (mainCalendarEl) {
+        const mainCalendar = new Calendar(mainCalendarEl, {
+            // config for main calendar
+            plugins: [dayGridPlugin, interactionPlugin],
+            initialView: 'dayGridMonth',
+            initialDate: new Date(),
+            headerToolbar: false,
+            events: '/api/events',
+            editable: true,
+            selectable: true,
+            // dateClick: function(info) {
+            //     $('#eventModal').modal('show');
+            //     document.querySelector('#eventForm input[name="date"]').value = info.dateStr;
+            // },
+            // eventClick: function(info) {
+            //     alert('Event: ' + info.event.title + '\nDate: ' + info.event.startStr);
+            // },
+            // datesSet: function(dateInfo) {
+            //     updateRealTimeClock();
+            // }
+        });
+    
+        // Calendar navigation controls
+       document.querySelector('.main-prev-month').addEventListener('click', () => mainCalendar.prev());
+       document.querySelector('.main-next-month').addEventListener('click', () => mainCalendar.next());
+       document.querySelector('.main-today').addEventListener('click', () => mainCalendar.today());
+       
+      mainCalendar.render();
+    }
+    
     // Real-time Clock
     function updateRealTimeClock() {
         const now = new Date();
@@ -159,12 +192,14 @@ document.getElementById('showCalendar').addEventListener('click', function() {
       fetch('/api/events', {
           method: 'POST',
           body: formData
-      }).then(() => {
+        }).then(() => {
           calendarEl.refetchEvents();
           $('#eventModal').modal('hide');
-      });
+        });
     });
     
     // Refresh calendar every minute
     setInterval(() => calendarEl.refetchEvents(), 60000);
-  });
+
+    setInterval(() => mainCalendarEl.refetchEvents(), 60000);
+});

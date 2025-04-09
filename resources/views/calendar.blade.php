@@ -13,11 +13,11 @@
                         </h2>
                     </div>
                     <div class="main-calendar-controls d-flex gap-2">
-                        <button class="btn btn-light btn-sm prev-month">
+                        <button class="btn btn-light btn-sm main-prev-month">
                             <i class="lni lni-chevron-left"></i>
                         </button>
-                        <button class="btn btn-light btn-sm today">Today</button>
-                        <button class="btn btn-light btn-sm next-month">
+                        <button class="btn btn-light btn-sm main-today">Today</button>
+                        <button class="btn btn-light btn-sm main-next-month">
                             <i class="lni lni-chevron-right"></i>
                         </button>
                         <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#eventModal">
@@ -28,17 +28,17 @@
             </div>
 
             <!-- Calendar Container -->
-            <div class="main-calendar-container bg-white p-3 rounded-bottom shadow">
+            <div class="main-calendar-container p-3 rounded-bottom shadow">
                 <div id="main-calendar"></div>
             </div>
 
             <!-- Event Details Sidebar (for desktop) -->
-            <div class="calendar-sidebar">
+            <!-- <div class="calendar-sidebar">
                 <div class="event-details p-3">
                     <h5>Event Details</h5>
                     <div id="eventDetails"></div>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <!-- Event Modal -->
